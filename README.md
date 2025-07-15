@@ -10,7 +10,7 @@ This project, jointly developed by Xi'an Jiaotong University and Huawei, provide
 
 ```bash
 git clone https://github.com/XJTU-RoboLab/Scene_Reconstruction.git --recursive
-cd gaussian-splatting
+cd Scene_Reconstruction
 conda env create --file environment.yml
 conda activate gaussian_splatting
 ```
@@ -18,15 +18,15 @@ conda activate gaussian_splatting
 ### 1.2 Convert Video to Image Sequence
 
 ```bash
-ffmpeg -i /dev/shm/GS_data/scene.mp4 -vf fps=10 /dev/shm/GS_data/data/input/image%d.png
+ffmpeg -i your_video_dir -vf fps=10 Scene_Reconstruction/data/input/image%d.png
 ```
 
 
 ### 1.3 Image Preprocessing and COLMAP Structure Generation
 
 ```bash
-cd gaussian-splatting
-python convert.py -s /dev/shm/GS_data/data --resize
+cd Scene_Reconstruction
+python convert.py -s Scene_Reconstruction/data --resize
 ```
 
 ### 1.4 Run Depth Estimation and Generate Scaling Factors
@@ -35,10 +35,7 @@ python convert.py -s /dev/shm/GS_data/data --resize
 
 ```bash
 pip install git+https://github.com/huggingface/transformers.git
-cd gaussian-splatting/align
-python depth_gen.py --input_path /dev/shm/GS_data/data/input
-
-cd gaussian-splatting
+python Scene_Reconstruction/depth_gen.py --input_path /dev/shm/GS_data/data/input
 python utils/make_depth_scale.py \
     --base_dir data/ \
     --depths_dir data/depth
@@ -58,8 +55,8 @@ python train.py -s data \
 ### 1.6 (Optional) Visualize Results Using SIBR Viewer
 
 ```bash
-cd gaussian-splatting/SIBR_viewers/install/bin
-./SIBR_gaussianViewer_app -m gaussian-splatting/src_lab/output/scene
+cd Scene_Reconstruction/SIBR_viewers/install/bin
+./SIBR_gaussianViewer_app -m Scene_Reconstruction/output/scene
 ```
 
 ---
@@ -76,7 +73,7 @@ Editor URL: [https://superspl.at/editor/](https://superspl.at/editor/)
 
 ⚠️ **Important: Do not apply any transformation (translation, rotation, or scale) to the Gaussian points.**
 
-> Save outputs to: `gaussian-splatting/point_cloud/`
+> Save outputs to: `Scene_Reconstruction/point_cloud/`
 
 ---
 
@@ -86,7 +83,7 @@ Editor URL: [https://superspl.at/editor/](https://superspl.at/editor/)
 
 ```bash
 cd align
-python initialize_matrix.py --gs_path gaussian-splatting/point_cloud/pcd_fps5_high_re/fr3.ply
+python initialize_matrix.py --gs_path Scene_Reconstruction/point_cloud/fr3.ply
 ```
 
 <details>
@@ -125,7 +122,7 @@ python icp_alignment.py
 Use a small neural network to refine the coarse alignment.
 
 ```bash
-python align/network_alignment.py --gs_path gaussian-splatting/point_cloud/pcd_fps5_high_re/fr3.ply
+python align/network_alignment.py --gs_path gaussian-splatting/point_cloud/fr3.ply
 ```
 
 The alignment network is defined in `network_alignment.py`, with the optimized result stored in:
@@ -171,8 +168,8 @@ Capture one full motion trajectory including:
 
 Trajectory data should be stored in `.h5` format. Key frame indices are set in:
 
-```python
-generate_demo.py
+```
+python generate_demo.py
 ```
 
 ---
@@ -188,7 +185,7 @@ conda activate robosplat
 cd RoboSplat
 pip install -r requirements.txt
 python data_aug/generate_demo.py \
-    --image_size 256 \
+    --image_size 224 \
     --save True \
     --save_video True \
     --ref_demo_path data/source_demo/real_000000.h5 \
