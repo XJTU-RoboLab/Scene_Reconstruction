@@ -143,6 +143,14 @@ python align/utils_2.py
 python align/obj_posed.py
 ```
 
+<details>
+<summary>Click to expand and view the pose alignment diagram.</summary>
+
+![pose alignment](align/figs/step5.png)
+
+</details>
+
+
 ---
 
 ## ✅ Step 6: Parse Robot Links from URDF
