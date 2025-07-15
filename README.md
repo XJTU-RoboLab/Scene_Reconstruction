@@ -219,3 +219,15 @@ python data_aug/generate_demo.py \
     --output_path data/generated_demo/pick_100
 ```
 
+## 🚧 TODO
+- [ ] Clean and modularize the RoboSplat codebase.
+
+
+ ## 🙏 Acknowledgments
+
+This work builds upon the open-source contributions of:
+
+* [Gaussian Splatting (graphdeco-inria)](https://github.com/graphdeco-inria/gaussian-splatting)
+* [RoboSplat (OpenRobotLab)](https://github.com/OpenRobotLab/RoboSplat)
+
+
