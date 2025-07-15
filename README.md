@@ -9,7 +9,7 @@ This project, jointly developed by Xi'an Jiaotong University and Huawei, provide
 ### 1.1 Clone the Repository and Setup the Environment
 
 ```bash
-git clone https://github.com/graphdeco-inria/gaussian-splatting --recursive
+git clone https://github.com/XJTU-RoboLab/Scene_Reconstruction.git --recursive
 cd gaussian-splatting
 conda env create --file environment.yml
 conda activate gaussian_splatting
