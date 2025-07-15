@@ -221,7 +221,8 @@ python data_aug/generate_demo.py \
 
 ## 🚧 TODO
 - [ ] Clean and modularize the RoboSplat codebase.
-
+- [ ] Improve rendering quality.
+- [ ] Support object category replacement and reconstruction.
 
  ## 🙏 Acknowledgments
 
