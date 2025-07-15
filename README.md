@@ -151,6 +151,9 @@ python align/obj_posed.py
 </details>
 
 
+⚠️ **Important: Follow the steps above to process the desktop and objects; objects need to be rescanned to obtain Gaussian.**
+
+
 ---
 
 ## ✅ Step 6: Parse Robot Links from URDF
