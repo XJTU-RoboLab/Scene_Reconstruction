@@ -1,0 +1,90 @@
+[
+    {
+        "cam_pos": [1.4, 1.0, 1.4],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_0",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [1.4, -1.0, 1.4],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_1",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [-0.6, -1.0, 1.4],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_2",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [-0.6, 1.0, 1.4],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_3",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [1.4, 1.0, -0.6],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_4",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [1.4, -1.0, -0.6],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_5",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [-0.6, -1.0, -0.6],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_6",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    },
+    {
+        "cam_pos": [-0.6, 1.0, -0.6],
+        "look_at_point" : [0.4, 0.0, 0.4],
+        "image_name" : "image_7",
+        "data_device": "cuda",
+        "width": 256,
+        "height" : 256,
+        "fov": 40,
+        "near": 0.1,
+        "far": 10.0
+    }
+]
