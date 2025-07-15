@@ -166,6 +166,19 @@ python get_link_mesh.py
 
 > Each link mesh will be saved with its local origin set to `[0, 0, 0]`.
 
+
+⚠️ **Important: Manually rename leftfinger_default.ply to link8_default.ply and rightfinger_default.ply to link9_default.ply.**
+
+
+<details>
+<summary>Click here.</summary>
+
+![Alt text](align/figs/last.png)
+
+</details>
+
+
+
 ---
 
 ## ✅ Step 7: Record Demonstration Trajectory
