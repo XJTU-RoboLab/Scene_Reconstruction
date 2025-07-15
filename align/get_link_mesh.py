@@ -1,5 +1,5 @@
 from typing import List
-
+import argparse
 ## TODO clean up the code here, too many functions that are plurals of one or the other and confusing naming
 import numpy as np
 import sapien
@@ -159,10 +159,9 @@ def get_articulation_meshes(
     names.append(link.name)
     return m.values(), m.keys()
 
-import os
 
-if __name__ == "__main__":
-    with open("/mnt/xjtu/GS/code/gaussian-splatting/camera.json", "r") as f:
+def main(agrs):
+    with open("./camera.json", "r") as f:
         cameras_info = json.load(f)
     sc = ('fr3_link0_sc', 'fr3_link1_sc', 'fr3_link2_sc', 'fr3_link3_sc', 'fr3_link4_sc', 'fr3_link5_sc', 'fr3_link6_sc', 'fr3_link7_sc', 'fr3_hand_sc')
     robot_util = RobotUtil(cameras_info, control_hz=22, timestep=1/180)
@@ -186,7 +185,7 @@ if __name__ == "__main__":
     meshes, names = get_articulation_meshes(robot_util.robot, sc)
 
     gaussians = GaussianModel(3, 'default')
-    gaussians.load_ply('/mnt/xjtu/GS/code/gaussian-splatting/point_cloud/pcd_fps5_high_re/fr3_posed.ply') # points to check whether it is in the meshes
+    gaussians.load_ply(args.ply_path) # points to check whether it is in the meshes
     i = 0
     link = {}
     points = gaussians.get_xyz.detach().cpu().numpy()
@@ -213,3 +212,11 @@ if __name__ == "__main__":
     # gaussian_component._scaling = gaussians.get_scaling[con]
     # gaussian_component._rotation = gaussians.get_rotation[con]
     # gaussian_component._opacity = gaussians.get_opacity[con]
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--gs_path", type=str, default="/mnt/xjtu/GS/code/gaussian-splatting/point_cloud/pcd_fps5_high_re/fr3.ply")
+    args = parser.parse_args()
+
+    main(args)
