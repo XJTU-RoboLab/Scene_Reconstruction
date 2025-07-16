@@ -220,9 +220,14 @@ python data_aug/generate_demo.py \
 ```
 
 ## 🚧 TODO
+- [ ] The `align` folder will be open-sourced after the project’s completion, scheduled for February 22, 2026.
 - [ ] Clean and modularize the RoboSplat codebase.
 - [ ] Improve rendering quality.
 - [ ] Support object category replacement and reconstruction.
+
+
+
+
 
  ## 🙏 Acknowledgments
 
